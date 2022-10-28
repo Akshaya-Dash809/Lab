@@ -7,19 +7,27 @@ package Lab_20Oct;
 import java.util.Scanner;
 public class EvenOdd {
 
-	 public static void main(String[] args)
-	    {
-	        Scanner sc = new Scanner(System.in);
-	        System.out.print("Input an integer:");
-	        int n = sc.nextInt();
-	        System.out.println("Check the number ,if even then true else false");
-	   
-	        if(n%2==0) {
-	        	System.out.println(true);
-	        }
-	        else
-	        	System.out.println(false);
-	   }
+	static int n; // defining variables
+
+	public static boolean evenodd(int n) { // method
+		final int f = 10;
+		if (n == 0) { // iff loop
+			return false;
+		}
+		while (n != 0) { // while loop
+			if ((n % f) % 2 != 0) { // if loop
+				return false;
+			}
+			n /= 10;
+		}
+		return true; // checking whether its true or false
 	}
 
-
+	public static void main(String[] args) { // main method
+		Scanner sc = new Scanner(System.in);// using scanner input
+		System.out.println("Enter the digit: ");
+		n = sc.nextInt();
+		System.out.println("Checking the Digit is even or odd ");
+		System.out.println(evenodd(n)); // calling the method
+	}
+}
