@@ -22,5 +22,13 @@
 		System.out.println(sb.replace(14, 20, "Builder"));//replace  buffer to builder
 		System.out.println(sb.reverse()); //reverse
 		
+		//problem statement 3
+		System.out.println("----------Problem 3------------");
+		StringBuilder str = new StringBuilder("C:\\IBM\\DB2\\PROGRAM\\DB2COPY1.EXE");// string builder class
+		System.out.println("Drive:" + str.substring(0, 3)); // printing 'Drive:C:\'
+		System.out.println("Folder:" + str.substring(3, 6).concat("||") + str.substring(7, 10).concat("||")
+				+ str.substring(11, 18)); // printing 'Folder:IBM||DB2||PROGRAM'
+		System.out.println("File:" + str.substring(20)); // printing 'File:B2COPY1.EXE'
+		
 	}
 }
