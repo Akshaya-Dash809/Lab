@@ -3,16 +3,17 @@ package Lab_15_Dec;
 public class Book {//main book class
 	
 	//encapsulating all data members
-	private String bookID, title, author, category;
+	private int bookId;
+	private String  title, author, category;
 	private float price;
 	
-	public Book(String bookID, String title, String author, String category, float price)  {//parameterized constructor
+	public Book(int bookId, String title, String author, String category, float price)  {//parameterized constructor
 		
 		//validations
 		try {
-			//conditon for bookID	
-			if((bookID.startsWith("B")) && (bookID.length()==4)) {	//condition
-				this.bookID=bookID;	//if condition meets
+			//conditon for bookId	
+			if((title.startsWith("B")) && (title.length()==4)) {	//condition
+				this.bookId=bookId;	//if condition meets
 			}
 			else {
 				throw new InvalidBookException("book id should be start with 'B' and lenght of 4");		//throws exception
@@ -43,8 +44,8 @@ public class Book {//main book class
 	}
 
 	//getters for all private data members
-	public String getBookID() {
-		return bookID;
+	public int getbookId() {
+		return bookId;
 	}
 
 	public String getTitle() {
@@ -64,7 +65,7 @@ public class Book {//main book class
 	}
 
 	public String toString() {	//for printing all details of Book objects
-		System.out.println("Book [bookID='" + bookID + "', title='" + title + "', author='" + author + "', category='" + category + "', price='" + price + "']");
+		System.out.println("Book [bookId='" + bookId + "', title='" + title + "', author='" + author + "', category='" + category + "', price='" + price + "']");
 	return toString();
 	}
 
