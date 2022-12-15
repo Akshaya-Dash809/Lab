@@ -13,9 +13,9 @@ public class BookUtil {
 		//taking inputs from user 
 		
 		System.out.println("For book-"+i);
-		System.out.println("Enter bookID:");
-		Scanner scanBookID  = new Scanner(System.in);								//instantiating scanner object
-		String bookID = scanBookID.nextLine();									//taking input for bookID
+		System.out.println("Enter bookId:");
+		Scanner scanbookId  = new Scanner(System.in);								//instantiating scanner object
+		int bookId = scanbookId.nextInt();									//taking input for bookId
 		
 		System.out.println("Enter title:");
 		Scanner scanTitle  = new Scanner(System.in);								//instantiating scanner object
@@ -33,15 +33,14 @@ public class BookUtil {
 		Scanner scanPrice  = new Scanner(System.in);								//instantiating scanner object
 		float price = scanPrice.nextFloat();									//taking input for price
 												
-		
-		obj.addBook(new Book(bookID,title,author,category,price));						//adding Book instances into BookStore
+		obj.addBook(new Book(bookId,title,author,category,price));						//adding Book instances into BookStore
 		obj.displayAll(); 
 		
 		if(i!=4) {	//condition for close scanner input stream
 			continue;
 		}
 		//closing all scanner input streams
-		scanBookID.close();
+		scanbookId.close();
 		scanTitle.close();
 		scanAuthor.close();
 		scanCategory.close();
